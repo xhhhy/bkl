@@ -23,10 +23,10 @@ const routes = [
     }
   },
   {
-    path: '/ustd',
-    name: 'ustd',
+    path: '/myorder',
+    name: 'myorder',
     component: () => {
-      return import('../views/ustd/ustd.vue')
+      return import('../views/myorder/myorder.vue')
     }
   },
   {
@@ -34,6 +34,55 @@ const routes = [
     name: 'message',
     component: () => {
       return import('../views/message/message.vue')
+    }
+  },
+  {
+    path: '/user',
+    name: 'user',
+    component: () => {
+      return import('../views/user/user.vue')
+    }
+  },
+  {
+    path: '/myorder',
+    name: 'myorder',
+    component: () => {
+      return import('../views/myorder/myorder.vue')
+    }
+  },
+  {
+    path: '/msgcontent',
+    name: 'msgcontent',
+    component: () => {
+      return import('../views/message/msgcontent.vue')
+    }
+  },
+  {
+    path: '/ustd',
+    name: 'ustd',
+    component: () => {
+      return import('../views/ustd/ustd.vue')
+    }
+  },
+  {
+    path: '/ustdtake',
+    name: 'ustdtake',
+    component: () => {
+      return import('../views/ustd/ustdtake.vue')
+    }
+  },
+  {
+    path: '/firend',
+    name: 'firend',
+    component: () => {
+      return import('../views/firend/firend.vue')
+    }
+  },
+  {
+    path: '/myfirend',
+    name: 'myfirend',
+    component: () => {
+      return import('../views/firend/myfirend.vue')
     }
   },
 ]

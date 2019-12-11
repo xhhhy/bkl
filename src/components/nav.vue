@@ -19,9 +19,9 @@ export default {
     return {
       nav:[
         {url:'/index',iconClass:'icon-hetongwenshu'},
-        {url:'#',iconClass:'icon-touziguanli'},
+        {url:'/myorder',iconClass:'icon-touziguanli'},
         {url:'/message',iconClass:'icon-xiaoxi'},
-        {url:'#',iconClass:'icon-custom-user'}
+        {url:'/user',iconClass:'icon-custom-user'}
       ]
     };
   }

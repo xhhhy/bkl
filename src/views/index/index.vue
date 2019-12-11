@@ -12,7 +12,7 @@
                                         </div>
                                         <div>USDT充值</div>
                                         </div></el-col>
-                                    <el-col :span="12"><div  class="img2">
+                                    <el-col :span="12"><div @click="toustake" class="img2">
                                         
                                         <div>
                                         <img src="../../../public/img/7.png" alt="">
@@ -93,107 +93,16 @@ export default {
     methods:{
         toustd(){
             this.$router.push("/ustd")
+        },
+        toustake(){
+            this.$router.push("/ustdtake")
         }
     }
 }
 </script>
 
 <style lang="less" scoped>
-.daylists{
-    margin: 20px;
-    text-align: left;
-    .daylist{
-        line-height: 40px;
-        margin: 10px 0 10px 0;
-           border-bottom: 1px solid #363f48;
-        img{
-            width: 35px;
-        }
-    }
-    .listbot{
-        text-align: right;
-        span{
-            margin-left: 5px;
-        }
-        img{
-        width: 10px;
 
-        }
-    }
-}
-.index{
-    height: 100vh;
-    background: #1f2933;
-        color:white;
-
-}
-.buy{
-    margin: 20px;
-    font-size: 14px;
-    border-bottom: 1px solid #363f48;
-    padding-bottom: 10px;
-    
-}
-.usdt{
-    padding: 20px;
-    padding-top: 0px;
-.usdtmoney{
-    font-size: 32px;
-    color: #0fbcfa;
-}
-.usdtbottom{
-    font-size: 14px;
-    line-height: 1.5;
-}
-border-bottom: 5px solid #192129
-}
-.myprice{
-    text-align: center;
-    margin: 20px;
-    font-size: 12px;
-
-    border-bottom: 1px solid #363f48;
-    padding-bottom: 15px
-}
-    .my,.right{
-        margin-left: 5px
-    }
-.indexhead{
-    background: #192129;
-    padding: 20px;
-    .head{
-        img{
-            width: 20%;
-        }
-    }
-    .headnext{
-        margin-top: 35px;
-        text-align: center;
-        font-size: 12px;
-        line-height: 2;
-        img{
-            width: 35px;
-        }
-        .img2{
-            img{
-                width: 30px;
-            }
-        }
-    }
-}
-.pricehead{
-    vertical-align: center;
-    text-align: left;
-    img{
-        position: relative;
-        top: 3px;
-        width: 15px;
-        
-    }
-}
-.mx{
-    text-align: right;
-}
 
 </style>
 

@@ -74,9 +74,9 @@ export default {
 
 }
 .tologin{
-  padding: 12px 80px 12px 80px;
+  padding: 12px 40px 12px 40px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   vertical-align: center;
   background: #0fbcfa;
   color: white;
