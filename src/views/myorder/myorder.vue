@@ -9,7 +9,7 @@
       </div>
          <div class="usdt">
             <div class="usdtmoney"><span>$</span> 300.21</div> 
-              <div class="ustdin"> <span>转入资产</span> </div> 
+              <div class="ustdin"><router-link to="ustdinto"><span>转入资产</span></router-link>  </div> 
           </div>
 
           <div class="ustdtitle">
@@ -48,11 +48,54 @@
                           <div>{{item.number}}</div> 
                           <div class="ustdday">$1000</div>
                           </div></el-col>
-                        <el-col :span="8"><div class="ustdr"><span>储藏</span><span>增值</span></div></el-col>
+                        <el-col :span="8"><div class="ustdr"><span   @click="buyitem1(item)"  class="ustlogt">出仓</span><span class="ustsave" @click="buyitem(item)">增值</span></div></el-col>
                         </el-row>
                     </div>
             </div>
+            <el-dialog
+                title=""
+                :visible.sync="dialogVisible"
+                width="85%"
+                :before-close="handleClose">
+                <div class="loadcont">
+                        <div class="ustround ustindex">
+                            <img :src="buy.image" alt="">
+                        </div>
+                        <div>{{buy.number}}</div>
+                        <div class="small">{{buy.name}}</div>
+                         <div class="takust"> 我的USTD</div>
+                         <div style="margin:10px"><el-input v-model="input" placeholder="请输入100的倍数"></el-input></div>
+                          <div class="takust"> 当前合约金额/剩余合约天数</div>
+                         <div style="margin:10px"><el-input v-model="input2" placeholder="请输入100的倍数的USTD"></el-input></div>
+                          <div class="takust"> 增值的金额</div>
+                         <div style="margin:10px"><el-input v-model="input1" placeholder="请输入100的倍数的USTD"></el-input></div>
+                        <div @click="submit" class="tofir">确认</div>
 
+                </div>
+               
+                </el-dialog>
+                    <el-dialog
+                title=""
+                :visible.sync="dialogVisible1"
+                width="85%"
+                :before-close="handleClose1">
+                <div class="loadcont">
+                        <div class="ustround ustindex">
+                            <img :src="zeng.image" alt="">
+                        </div>
+                        <div>{{zeng.number}}</div>
+                        <div class="small">{{zeng.name}}</div>
+                         <div class="takust"> 当前合约天数</div>
+                         <div style="margin:10px"><el-input v-model="input3" placeholder="请输入100的倍数"></el-input></div>
+                          <div class="takust"> 剩余合约天数</div>
+                         <div style="margin:10px"><el-input v-model="input4" placeholder="请输入100的倍数的USTD"></el-input></div>
+                          <div class="takustss"> 出仓说明：<br> 合约分仓管理制：未到期出仓的收取20%进入风控基金。 <br></div>
+
+                        <div @click="submit1" class="tofir">提前出仓</div>
+
+                </div>
+               
+                </el-dialog>
      <navfoot/>
   </div>
 </template>
@@ -65,7 +108,23 @@ export default {
   components:{ navfoot},
   data() {
     return {
+         input:"123456",
+        input1:"",
+        input2:"123456",
+        input3:"123123",
+        input4:"123456",
+        dialogVisible:false,
+        dialogVisible1:false,
+
+           buy:{
+               image: require('../../../public/img/10.png'),number:"15 Day",name:"+0.77%"
+           },
+           zeng:{
+               image: require('../../../public/img/10.png'),number:"15 Day",name:"+0.77%"
+           },
+
          datalist:[
+
                {
                image: require('../../../public/img/10.png'),day:"1" ,number:"+1.2%",name:"+0.77%"
            },
@@ -76,6 +135,34 @@ export default {
            }
            ]
     };
+  },
+  methods:{
+       buyitem(item){
+            this.buy=item
+            this.dialogVisible=true
+        },
+         buyitem1(item){
+            this.zeng = item
+            this.dialogVisible1=true
+        },
+        toustd(){
+            this.$router.push("/ustd")
+        },
+        toustake(){
+            this.$router.push("/ustdtake")
+        },
+        handleClose(){
+             this.dialogVisible=false
+        },
+         handleClose1(){
+             this.dialogVisible1=false
+        },
+        submit(){
+            console.log(411)
+        },
+        submit1(){
+          console.log(222)
+        }
   }
 };
 </script>
@@ -99,6 +186,9 @@ export default {
 .ustdin{
   font-size: 14px;
   margin-top: 10px;
+  a{
+    color: white;
+  }
   span{
     font-size: 12px;
     background: #0fbcfa;
@@ -107,9 +197,8 @@ export default {
     line-height: 2;
   }
 }
-.orderhead{
+.orderhead,.newhead{
     background: #192129;
-
 }
 .ustdname{
   font-size: 12px;
@@ -138,7 +227,55 @@ export default {
    padding:  0 5px 
  }
 }
+.ustsave{
+  padding: 5px 10px 5px 10px;
+  background: #0fbcfa;
+  color: black;
+  font-size: 12px;
+  border-radius: 8px;
+}
+.ustlogt{
+  padding: 4px 10px 4px 10px;
+  background: #1f2933;
+  color: #fff;
+  border: 1px solid #0fbcfa;
+  font-size: 12px;
+  border-radius: 8px;
+  margin-right: 10px;
 
+}
 
+.loadcont{
+    text-align: center;
+    font-size: 24px;
+    .small{
+        font-size: 14px;
+        color: #999;
+    }
+    input{
+        color:#0fbcfa!important;
+    }
+}
+.takust{
+    color: #999;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 10px;
+    line-height: 2;
+}
+.takustss{
+   color: #999;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 10px;
+    line-height: 2;
+}
+.tofir{
+  text-align: center;
+  font-size: 14px;
+  background-color: #0fbcfa;
+  border-radius: 15px;
+  margin-top: 50px;
+}
 
 </style>

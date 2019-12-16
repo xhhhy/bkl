@@ -8,7 +8,7 @@
     <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="私人信箱" name="first">  
             <div class="mymsg">
-              <div class="msglist" @click="tomsg">
+              <div class="msglist">
                 <div class="time">2019/12/01 14:00</div>
                 <div class="success">恭喜您的100USDT已充值成功！</div>
               </div>
@@ -25,7 +25,7 @@
         <el-tab-pane label="系统公告" name="second">
              <div class="mymsg">
               <div class="msglist">
-                <div class="time">2019/12/01 14:00</div>
+                <div class="time"  @click="tomsg">2019/12/01 14:00</div>
                 <div class="success">恭喜您的100USDT已充值成功！</div>
               </div>
             

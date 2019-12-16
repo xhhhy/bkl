@@ -85,6 +85,57 @@ const routes = [
       return import('../views/firend/myfirend.vue')
     }
   },
+  {
+    path: '/firustd',
+    name: 'firustd',
+    component: () => {
+      return import('../views/firend/firustd.vue')
+    }
+  },
+  
+  {
+    path: '/phonebind',
+    name: 'phonebind',
+    component: () => {
+      return import('../views/user/phonebind.vue')
+    }
+  },
+  {
+    path: '/changepss',
+    name: 'changepss',
+    component: () => {
+      return import('../views/user/changepss.vue')
+    }
+  },
+  {
+    path: '/language',
+    name: 'language',
+    component: () => {
+      return import('../views/user/language.vue')
+    }
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => {
+      return import('../views/user/about.vue')
+    }
+  },
+  {
+    path: '/security',
+    name: 'security',
+    component: () => {
+      return import('../views/user/security.vue')
+    }
+  },
+  {
+    path: '/ustdinto',
+    name: 'ustdinto',
+    component: () => {
+      return import('../views/myorder/ustdinto.vue')
+    }
+  },
+
 ]
 const router = new VueRouter({
   mode: 'history',

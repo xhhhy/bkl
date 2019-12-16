@@ -2,7 +2,7 @@
   <div class="user">
     <div class="userhead"> 
       <div class="usermsg">
-        <div class="msghead">个性设置<span class="userout"><img src="../../../public/img/17.png" alt=""></span> </div>
+        <div class="msghead newhead">个性设置<span class="userout"><img src="../../../public/img/17.png" alt=""></span> </div>
       </div>
       <div class="usertitle">
         <el-row>
@@ -44,7 +44,7 @@
                   
               </el-col>
                <el-col :span="8">
-                  <router-link to="/firend">
+                  <router-link to="/firustd">
                    <div class="userlist">
                     <div >
                     <img src="../../../public/img/21.png" alt="">
@@ -63,6 +63,7 @@
     </div>
     <div class="munel">
         <div class="usermunelist"  v-for="(item,i) in munelist" :key="i" >
+          <router-link :to="item.url">
             <div class="munelist">
                   <el-row>
                       <el-col :span="2">
@@ -83,6 +84,7 @@
                       </el-col>
                     </el-row>
             </div>
+            </router-link>
           </div>
     </div>
           
@@ -100,11 +102,11 @@ export default {
   data() {
     return {
         munelist:[
-          {name:"手机绑定",title:"",img:require('../../../public/img/22.png')},
-          {name:"登录密码",title:"",img:require('../../../public/img/23.png')},
-          {name:"安全码",title:"未设置！",img:require('../../../public/img/24.png')},
-          {name:"语言设置",title:"",img:require('../../../public/img/25.png')},
-          {name:"关于我们",title:"",img:require('../../../public/img/26.png')},
+          {name:"手机绑定",title:"",img:require('../../../public/img/22.png'),url:"/phonebind"},
+          {name:"登录密码",title:"",img:require('../../../public/img/23.png'),url:"/changepss"},
+          {name:"安全码",title:"未设置！",img:require('../../../public/img/24.png'),url:"/security"},
+          {name:"语言设置",title:"",img:require('../../../public/img/25.png'),url:"/language"},
+          {name:"关于我们",title:"",img:require('../../../public/img/26.png'),url:"/about"},
           
         ]
     };
@@ -153,7 +155,10 @@ export default {
   padding-bottom: 10px;
   margin: 20px;
   font-size: 12px;
+  a{
   color: #dfe0e0;
+
+  }
 }
 .usermune{
   text-align: center;

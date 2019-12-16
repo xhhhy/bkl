@@ -1,7 +1,7 @@
 <template>
   <div class="ustd">
         <div class="ustdheader">
-         <div class="msghead"> <span  @click="back" class="back"><img src="../../../public/img/28.png" alt=""></span>USDT充值<span class="ustdrecord"><img src="../../../public/img/29.png" alt=""></span> </div>
+         <div class="msghead newhead"> <span  @click="back" class="back"><img src="../../../public/img/28.png" alt=""></span>USDT充值<span class="ustdrecord"><img src="../../../public/img/29.png" alt=""></span> </div>
         </div>
         <div class="ustcont">
           <div class="ustround">

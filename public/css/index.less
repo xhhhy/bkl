@@ -27,9 +27,21 @@ a{
 
 .el-input__inner{
     color: #999!important;
-    background-color: #192129!important;
+    background-color: #141a21!important;
     border: none!important;
     font-size: 8px!important;
+    height: 40px!important;
+    line-height: 40px!important;
+}
+.language{
+  .el-input__inner{
+    background-color: #192129!important;
+}
+}
+.firinin{
+  .el-input__inner, input::placeholder{
+      color: #0fbcfa!important;
+  }
 }
 .form{
     width: 85%;
@@ -98,7 +110,7 @@ a{
   }
   .el-input-group__append , .el-input-group__prepend, .el-input-group__prepend select{
     border: none!important;
-    background: #192129!important;
+    background: #141a21!important;
     color: #0fbcfa!important;
     border-left: 0;
 }
@@ -131,6 +143,7 @@ a{
   font-size: 16px;
   padding: 20px 0 20px;
   letter-spacing: 1px;
+  background: #1f2933;
 
 }
 .content{
@@ -364,8 +377,74 @@ border-bottom: 5px solid #192129
     }
     padding: 5px;
 }
-
+.el-dialog, .el-pager li{
+ background: #192129!important;
+}
+.el-dialog__body{
+  color: #fff!important;
+}
+.el-textarea__inner{
+  min-height: 100px!important;
+  background: #192129!important;
+  border: none!important;
+  font-size: 12px!important;
+}
  
-  
+.el-radio__inner{
+  display: none!important;
+  background: #1f2933;
+}
+.el-radio-group {
+  .el-radio{
+    background: #1f2933;
+  }
+  width: 100%;
+  .el-radio.is-bordered{
+    border: none;
+  }
+  .el-radio.is-bordered+.el-radio.is-bordered{
+    margin-left: 0px;
+  }
+  label{
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+  .is-checked{
+    background:#0fbcfa ;
+  }
+  .el-radio__input.is-checked+.el-radio__label{
+    color: white!important;
+  }
+}
+.firendcont{
+  height: 100vh;
+  padding: 20px;
+  margin: 0;
+  background: #192129;
+  line-height: 3;
+}
+.tofir{
+  text-align: center;
+  font-size: 14px;
+  background-color: #0fbcfa;
+  border-radius: 5px;
+  line-height: 40px;
+  margin-top: 100px;
+}
+.newhead{
+  background: #192129;
+}
+
+.firinb .el-input{
+  input::placeholder{
+    color: #0fbcfa!important;
+}
+}
+.loadcont{
+  input{
+    color: #0fbcfa!important;
+  }
+}
 
 
